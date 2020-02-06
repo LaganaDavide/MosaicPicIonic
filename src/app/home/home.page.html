@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-button color="primary" expand="full" size="large" (click)="takePicture()"
+    >Select main Image</ion-button>
+  <ion-button color="primary" expand="full" size="large" (click)="takePictures()"
+    >Select cards images</ion-button>
+  <ion-button color="primary" expand="full" size="large" (click)="takePicture()"
+    >Create Mosaic</ion-button>
+  <img id="main" src={{mainImage}}>
+
+</ion-content>

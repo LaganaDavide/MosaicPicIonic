@@ -1,0 +1,7 @@
+{
+  "name": "mosaicPic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
