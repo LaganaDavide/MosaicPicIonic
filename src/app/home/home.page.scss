@@ -1,1 +1,26 @@
 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    // width: 50%;
+  }
+
+  .button {
+    width: 80%;
+  }
+
+  .icon{
+    width: 200px;
+    margin-top: 4em;
+  }
+
+  .title{
+    font-family: 'Dancing Script', cursive;
+    font-size: 32px;
+    text-shadow: 4px 4px 4px #aaa;
+  }
+
+  .check{
+    font-size: larger;
+  }

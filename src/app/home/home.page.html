@@ -1,19 +1,58 @@
-<ion-header>
+<!-- <ion-header  class="ion-text-center">
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Mosaic Picture
     </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet"> 
+<div  *ngIf="page==1" >
+  <img  class="icon center" src="assets/icon/mosaic.png"  height="200px" id="main" >
+  <div class="title ion-text-center">MOSAIC PICTURE</div>
+</div>
 
-<ion-content>
+<ion-content *ngIf="page==1"  style="top: 50%; position: absolute;">
+  
+  <ion-button  class=" button center"  color="primary"  size="large" (click)="preview()"
+    >Select main Image <ion-icon *ngIf="mainImg" color="secondary" class="check" name="checkmark"></ion-icon> </ion-button> 
 
-  <ion-button color="primary" expand="full" size="large" (click)="takePicture()"
-    >Select main Image</ion-button>
-  <ion-button color="primary" expand="full" size="large" (click)="takePictures()"
-    >Select cards images</ion-button>
-  <ion-button color="primary" expand="full" size="large" (click)="takePicture()"
+  <ion-button class=" button center"  color="primary"  size="large" (click)="previewMult()"
+    >Select cards images<ion-icon *ngIf="this.cardImgs.length > 0" color="secondary" class="check" name="checkmark"></ion-icon></ion-button>
+
+  <ion-item color="primary" style="width: 80%;" class="button center" *ngIf="page==1" class="center">
+    <ion-label position="stacked">Select the number of cards</ion-label>
+    <ion-input type="number" [(ngModel)]="numRec"  ></ion-input>
+  </ion-item>
+
+  <ion-button  class=" button center"  color="primary" expand="block" size="large" (click)="createMosaic()"
     >Create Mosaic</ion-button>
-  <img id="main" src={{mainImage}}>
 
+  <ion-button class="center"  color="primary" size="default" (click)="presentAbout()"
+  >About </ion-button> 
+
+  <!-- <img *ngIf="page==1" class="center" height="200" id="main" src={{mainImg}}>
+  <br>
+  <div *ngIf="page==1" >
+    <img src="{{card}}" *ngFor="let card of cardImgs"  height="70" id="main" >
+  </div> -->   
 </ion-content>
+
+<ion-content *ngIf="page==2" style="top: 1em;">
+  <img  class="center" src="{{result}}" height="100%"  >
+  
+</ion-content>
+<ion-footer *ngIf="page==2"  >
+  <ion-toolbar>
+    <ion-row>
+      <ion-col>
+        <ion-button class="center" color="primary"  size="medium" (click)="download()"
+        >Download</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button  class="center"  color="primary"  size="medium" (click)="reset()"
+        >Reset</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+  
+</ion-footer>
